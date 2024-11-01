@@ -154,7 +154,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
           variant="h6"
           className="mr-4 cursor-pointer py-1.5 lg:ml-2"
         >
-          <div className="image__wrapper w-[250px] h-[60px] max-w-[250px] bmd:w-[200px] bmd:h-[45px] relative">
+          <div className="image__wrapper w-[250px] h-[60px] max-w-[250px] bmd:w-[200px] bmd:h-[45px] relative top-[-10px]">
             <img src={logo} alt="Golden Gate" className="absolute inset-0 w-full object-cover" />
           </div>
         </Typography>

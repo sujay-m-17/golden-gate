@@ -34,7 +34,7 @@ export function ContactForm() {
           },
         ]}
       >
-        <Input />
+        <Input className='font-primary tracking-[1px]' />
       </Form.Item>
       <Form.Item
         name="email"
@@ -82,8 +82,8 @@ export function ContactForm() {
       </Form.Item>
       <Form.Item>
         <Space>
-          <SubmitButton form={form}>Submit</SubmitButton>
-          <Button className="rounded-[50px]" htmlType="reset">Reset</Button>
+          <SubmitButton form={form} className="font-heading rounded-[50px]">Submit</SubmitButton>
+          <Button className="font-heading rounded-[50px]" htmlType="reset">Reset</Button>
         </Space>
       </Form.Item>
     </Form>
