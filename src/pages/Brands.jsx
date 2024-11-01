@@ -175,7 +175,7 @@ export default function Brands() {
             <div className=" mx-auto pt-[4rem] p-[2rem] grid grid-cols-3 gap-[10px] bmd:grid-cols-1">
                 {brands.map((brand, index) => (
                     <CardContainer key={index} className="inter-var">
-                        <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[25rem] bmd:w-[20rem] h-auto rounded-xl p-6 border" data-aos="fade-up">
+                        <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[25rem] bmd:w-[100%] h-auto rounded-xl p-6 border" data-aos="fade-up">
                             <CardItem
                                 translateZ="50"
                                 className="text-[25px] font-heading font-bold text-neutral-600 dark:text-white"

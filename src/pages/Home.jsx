@@ -19,6 +19,7 @@ import { Contact } from 'lucide-react';
 import { AceCarousel } from '../components/ace-carousel';
 import { GridCardsSection } from '../components/grid-cards';
 import { ResultsInfo } from '../components/results-info';
+import { DrawerBlock } from '../components/drawer-block';
 
 function HomePage() {
 

@@ -22,85 +22,22 @@ import {
 import { Link } from 'react-router-dom';
 
 import logo from '../assets/main-logo.png'
+import { DrawerBlock } from "./drawer-block";
+import { HelpCircleIcon } from "lucide-react";
 
- 
-function NavListMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [openNestedMenu, setopenNestedMenu] = React.useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
- 
-  return (
-    <React.Fragment>
-      <Menu
-        className="hello"
-        open={isMenuOpen}
-        handler={setIsMenuOpen}
-        placement="bottom"
-        allowHover={true}
-      >
-        <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
-            <ListItem
-              className="font-primary font-[700] flex items-center gap-2 py-2 pr-4 text-gray-900"
-              selected={isMenuOpen || isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
-            >
-               <Link to="/about">About</Link>
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`hidden h-3 w-3 transition-transform lg:block ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`}
-              />
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`block h-3 w-3 transition-transform lg:hidden ${
-                  isMobileMenuOpen ? "rotate-180" : ""
-                }`}
-              />
-            </ListItem>
-          </Typography>
-        </MenuHandler>
-        <MenuList className="hidden rounded-xl lg:block">
-          <Menu
-            placement="right-start"
-            allowHover
-            offset={15}
-            open={openNestedMenu}
-            handler={setopenNestedMenu}
-          >
-            <MenuHandler className="flex items-center justify-between">
-              <MenuItem>
-              <p className="font-primary font-[700]">Manager's Note</p>
-              </MenuItem>
-            </MenuHandler>
-          </Menu>
-        </MenuList>
-      </Menu>
-      <div className="block lg:hidden">
-        <Collapse open={isMobileMenuOpen}>
-          <Menu
-            placement="bottom"
-            allowHover
-            offset={6}
-            open={openNestedMenu}
-            handler={setopenNestedMenu}
-          >
-            <MenuHandler className="flex items-center justify-between">
-              <MenuItem>
-              <p className="font-primary font-[700]">Manager's Note</p>
-              </MenuItem>
-            </MenuHandler>
-          </Menu>
-        </Collapse>
-      </div>
-    </React.Fragment>
-  );
-}
  
 function NavList() {
   return (
-    <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1">
+    <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row items-center lg:p-1">
+      <Typography
+        as={Link}
+         to="/about"
+        variant="small"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="font-primary font-[700] flex items-center gap-2 py-2 pr-4">About</ListItem>
+      </Typography>
       <Typography
         as={Link}
          to="/brands"
@@ -121,7 +58,6 @@ function NavList() {
           Media Center
         </ListItem>
       </Typography> */}
-      <NavListMenu />
       <Typography
         as={Link}
         to="/order"
@@ -130,6 +66,15 @@ function NavList() {
         className="font-medium"
       >
         <ListItem className="font-primary font-[700] flex items-center gap-2 py-2 pr-4">Order Online</ListItem>
+      </Typography>
+      <Typography
+        as="div"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="font-primary font-[700] flex items-center gap-2 py-2 pr-4">
+            <DrawerBlock />
+        </ListItem>
       </Typography>
     </List>
   );
@@ -180,7 +125,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
           <Button className="font-button text-[16px] capitalize font-normal bg-[#0C0F0A] rounded-[50px]" size="sm" fullWidth>
-            Contact Us
+          <Link to="/contact">Contact us</Link>
           </Button>
         </div>
       </Collapse>

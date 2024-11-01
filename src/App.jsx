@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -15,12 +15,25 @@ import About from './pages/About';
 import Order from './pages/Order';
 import ContactUs from './pages/ContactUs';
 
+import Preloader from './components/preloader';
+
 function App() {
+
+  const [screenLoading, setScreenLoading] = useState(false);
+
   useEffect(() => {
+    // Preloader
+    setScreenLoading(true);
+
+    setTimeout(() => {
+      setScreenLoading(false);
+    }, 5000);
+
     AOS.init({
       duration: 1000,
       easing: "ease-out-cubic",
     });
+
     const lenis = new Lenis({
       duration: 1.2,          // Scroll duration
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),       // Linear easing
@@ -44,17 +57,19 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<MainLayout />} >
+      {
+        screenLoading ? <Preloader /> : <Router>
+          <Routes>
+            <Route path="/" element={<MainLayout />} >
               <Route index element={<HomePage />} />
               <Route path="/about" element={<About />} />
               <Route path="brands" element={<Brands />} />
               <Route path="/order" element={<Order />} />
               <Route path="/contact" element={<ContactUs />} />
             </Route>
-        </Routes>
-      </Router>
+          </Routes>
+        </Router>
+      }
     </>
   )
 }
