@@ -19,6 +19,8 @@ import {
   ChevronUpIcon,
 } from "@heroicons/react/24/outline";
 
+import { Link } from 'react-router-dom';
+
 import logo from '../assets/main-logo.png'
 
  
@@ -39,11 +41,11 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className="font-primary flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+              className="font-primary font-[700] flex items-center gap-2 py-2 pr-4 text-gray-900"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              About
+               <Link to="/about">About</Link>
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`hidden h-3 w-3 transition-transform lg:block ${
@@ -69,7 +71,7 @@ function NavListMenu() {
           >
             <MenuHandler className="flex items-center justify-between">
               <MenuItem>
-              <p className="font-primary">Manager's Note</p>
+              <p className="font-primary font-[700]">Manager's Note</p>
               </MenuItem>
             </MenuHandler>
           </Menu>
@@ -86,7 +88,7 @@ function NavListMenu() {
           >
             <MenuHandler className="flex items-center justify-between">
               <MenuItem>
-              <p className="font-primary">Manager's Note</p>
+              <p className="font-primary font-[700]">Manager's Note</p>
               </MenuItem>
             </MenuHandler>
           </Menu>
@@ -100,34 +102,34 @@ function NavList() {
   return (
     <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1">
       <Typography
-        as="a"
-        href="#"
+        as={Link}
+         to="/brands"
         variant="small"
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="font-primary flex items-center gap-2 py-2 pr-4">Our Brands</ListItem>
+        <ListItem className="font-primary font-[700] flex items-center gap-2 py-2 pr-4">Our Brands</ListItem>
       </Typography>
-      <Typography
+      {/* <Typography
         as="a"
         href="#"
         variant="small"
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="font-primary flex items-center gap-2 py-2 pr-4">
+        <ListItem className="font-primary font-[700] flex items-center gap-2 py-2 pr-4">
           Media Center
         </ListItem>
-      </Typography>
+      </Typography> */}
       <NavListMenu />
       <Typography
-        as="a"
-        href="#"
+        as={Link}
+        to="/order"
         variant="small"
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="font-primary flex items-center gap-2 py-2 pr-4">Order Online</ListItem>
+        <ListItem className="font-primary font-[700] flex items-center gap-2 py-2 pr-4">Order Online</ListItem>
       </Typography>
     </List>
   );
@@ -160,7 +162,7 @@ export function NavigationbarWithDropdownMultilevelMenu() {
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex">
-          <Button className="font-button text-[16px] capitalize font-normal bg-[#0C0F0A] rounded-[50px]" size="sm">Contact us</Button>
+          <Button className="font-button text-[16px] capitalize font-normal bg-[#0C0F0A] rounded-[50px]" size="sm"> <Link to="/contact">Contact us</Link></Button>
         </div>
         <IconButton
           variant="text"

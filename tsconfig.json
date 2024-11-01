@@ -19,7 +19,7 @@
     "include": [
         "src/**/*.js",
         "src/**/*.jsx"
-    ],
+, "src/components/ui/text-generate-effect.tsx", "src/components/ui/typewriter-effect.tsx"    ],
     "exclude": [
         "node_modules"
     ]

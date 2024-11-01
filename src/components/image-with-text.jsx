@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from '@material-tailwind/react';
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 export function ImageWithText({
+    words,
     imageSrc,
-    title = "Welcome To Golden Gate Dairy Factory",
+    title = "Welcome To Golden Golden Dairy Factory",
     description = "Golden Gate Dairy Manufacturing Company was established in 2022. Based in United Arab Emirates...",
     buttonText = "Learn More",
     containerClass = "flex px-[2rem] py-[4rem] flex-row gap-[20px] justify-between bmd:flex-col-reverse",
@@ -20,6 +22,7 @@ export function ImageWithText({
             </div>
             <div className={`text__wrapper ${textWrapperClass}`} data-aos="fade-up">
                 <h2 className={titleClass}>{title}</h2>
+                <TypewriterEffectSmooth className='font-heading text-[30px] blg:hidden lg:flex'  words={words} />
                 <p className={descriptionClass}>{description}</p>
                 <Button className={buttonClass} size="sm">
                     {buttonText}

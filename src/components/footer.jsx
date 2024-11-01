@@ -6,7 +6,7 @@ import footerLogo from '../assets/footer-logo.png'
 const LINKS = [
     {
         title: "Company",
-        items: ["About", "Our Brands", "Media Center", "Order Online", "Contact Us"],
+        items: ["About", "Our Brands", "Order Online", "Contact Us"],
     },
 ];
 
@@ -22,16 +22,16 @@ export function FooterWithSocialLinks() {
                             <img src={footerLogo} alt="footer logo" />
                         </div>
                         <div className="contact__wrapper">
-                            <h2 className="font-button font-bold text-[30px]">Contact Information</h2>
+                            <h2 className="font-heading font-bold text-[30px]">Contact Information</h2>
                             <div className="flex flex-col">
-                                <div className="phoneNumber">
+                                <div className="phoneNumber font-primary">
                                     +971 343 9537
                                 </div>
-                                <div className="phoneNumber">
+                                <div className="phoneNumber font-primary">
                                     +971 395 5308
                                 </div>
-                                <a href="mailto:info@goldengatedairv.com">info@goldengatedairv.com</a>
-                                <div className="address">
+                                <a className="font-primary" href="mailto:info@goldengatedairv.com">info@goldengatedairv.com</a>
+                                <div className="address font-primary">
                                     DIP 2 - Dubai - UAE
                                 </div>
                             </div>
@@ -42,7 +42,7 @@ export function FooterWithSocialLinks() {
                             <ul key={title}>
                                 <Typography
                                     color="blue-gray"
-                                    className="mb-3 text-[20px] font-button font-bold"
+                                    className="mb-3 text-[20px] font-heading font-bold"
                                 >
                                     {title}
                                 </Typography>
@@ -64,7 +64,7 @@ export function FooterWithSocialLinks() {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="mb-3 text-[20px] font-button font-bold"
+                                className="mb-3 text-[20px] font-heading font-bold"
                             >
                                 Accreditation
                             </Typography>
